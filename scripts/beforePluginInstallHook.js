@@ -8,6 +8,9 @@ It can be found in https://github.com/nordnet/cordova-hot-code-push-cli
 var path = require('path');
 var fs = require('fs');
 var spawnSync = require('child_process').spawnSync;
+if (!spawnSync) {
+	spawnSync = require('spawn-sync');
+}
 var pluginNpmDependencies = require('../package.json').dependencies;
 var INSTALLATION_FLAG_FILE_NAME = '.npmInstalled';
 
